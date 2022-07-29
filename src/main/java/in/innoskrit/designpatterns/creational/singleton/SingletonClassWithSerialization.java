@@ -20,4 +20,12 @@ public class SingletonClassWithSerialization implements Serializable {
         }
         return singletonClassInstance;
     }
+
+    /**
+     * This method is internally called by ObjectInputStream while deserialization.
+     * @return singletonClassInstance   the Singleton Class Instance
+     */
+    public Object readResolve() {
+        return singletonClassInstance;
+    }
 }

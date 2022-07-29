@@ -38,6 +38,9 @@ public class Driver {
         ObjectInputStream objectInputStream = new ObjectInputStream(Files.newInputStream(new File("/Users/prernasharma/Documents/Interview/designpatterns/utils/instance.ser").toPath()));
         instance2 = (SingletonClassWithSerialization) objectInputStream.readObject();
 
+        objectInputStream.close();
+        objectInputStream.close();
+
         System.out.println(instance1 == instance2);
 
     }
